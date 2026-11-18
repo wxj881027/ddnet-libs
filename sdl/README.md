@@ -12,10 +12,10 @@
 - `ios/libSDL3.xcframework`：iOS 动态 framework（官方 xcframework 切片）
 - `java/org/libsdl/app`：Android 绑定
 - `proguard-rules.pro`：Android 混淆保留规则
-- `VERSION`：Windows/Linux/Android/macOS/iOS 切片的 SDL3 版本（webasm 仍为 3.4.18）
+- `VERSION`：全部切片的 SDL3 版本
 
-当前已产出：Windows x64/x86/arm64、Linux x64（含 `cmake/PatchSDL3X11.cmake` 的修复）、Android 四个 ABI、macOS、iOS。
-待补：webasm 需要用 emsdk 在同一版本上生成。
+当前已产出：Windows x64/x86/arm64、Linux x64（含 `cmake/PatchSDL3X11.cmake` 的修复）、Android 四个 ABI、macOS、iOS、webasm。
+webasm 使用 emsdk 7.0.0 与 `-pthread` 构建；重建时需保持相同工具链和线程参数。
 
 ## 重新生成
 
