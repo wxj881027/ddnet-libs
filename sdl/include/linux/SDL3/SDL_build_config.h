@@ -86,16 +86,16 @@
 #define HAVE_MEMCMP 1
 #define HAVE_WCSLEN 1
 #define HAVE_WCSNLEN 1
-#define HAVE_WCSLCPY 1
-#define HAVE_WCSLCAT 1
+/* #undef HAVE_WCSLCPY */
+/* #undef HAVE_WCSLCAT */
 #define HAVE_WCSSTR 1
 #define HAVE_WCSCMP 1
 #define HAVE_WCSNCMP 1
 #define HAVE_WCSTOL 1
 #define HAVE_STRLEN 1
 #define HAVE_STRNLEN 1
-#define HAVE_STRLCPY 1
-#define HAVE_STRLCAT 1
+/* #undef HAVE_STRLCPY */
+/* #undef HAVE_STRLCAT */
 #define HAVE_STRPBRK 1
 /* #undef HAVE__STRREV */
 #define HAVE_INDEX 1
@@ -193,9 +193,12 @@
 #define HAVE_GETPAGESIZE 1
 #define HAVE_ICONV 1
 /* #undef SDL_USE_LIBICONV */
+#define HAVE_PTHREAD_CONDATTR_SETCLOCK 1
 #define HAVE_PTHREAD_SETNAME_NP 1
 /* #undef HAVE_PTHREAD_SET_NAME_NP */
-#define HAVE_SEM_TIMEDWAIT 1
+#define HAVE_SEM_CLOCKWAIT 1
+/* #undef HAVE_SEM_CLOCKWAIT_NP */
+/* #undef HAVE_SEM_TIMEDWAIT */
 #define HAVE_GETAUXVAL 1
 /* #undef HAVE_ELF_AUX_INFO */
 #define HAVE_PPOLL 1
@@ -207,20 +210,20 @@
 
 #define HAVE_DBUS_DBUS_H 1
 #define HAVE_FCITX 1
-/* #undef HAVE_IBUS_IBUS_H */
+#define HAVE_IBUS_IBUS_H 1
 #define HAVE_INOTIFY_INIT1 1
 #define HAVE_INOTIFY 1
-/* #undef HAVE_LIBUSB */
+#define HAVE_LIBUSB 1
 #define HAVE_O_CLOEXEC 1
 
 #define HAVE_LINUX_INPUT_H 1
 #define HAVE_LIBUDEV_H 1
-/* #undef HAVE_LIBDECOR_H */
-/* #undef HAVE_LIBURING_H */
-/* #undef HAVE_FRIBIDI_H */
-/* #undef SDL_FRIBIDI_DYNAMIC */
-/* #undef HAVE_LIBTHAI_H */
-/* #undef SDL_LIBTHAI_DYNAMIC */
+#define HAVE_LIBDECOR_H 1
+#define HAVE_LIBURING_H 1
+#define HAVE_FRIBIDI_H 1
+#define SDL_FRIBIDI_DYNAMIC "libfribidi.so.0"
+#define HAVE_LIBTHAI_H 1
+#define SDL_LIBTHAI_DYNAMIC "libthai.so.0"
 
 /* #undef HAVE_DDRAW_H */
 /* #undef HAVE_DSOUND_H */
@@ -278,8 +281,8 @@
 /* #undef SDL_AUDIO_DRIVER_JACK_DYNAMIC */
 /* #undef SDL_AUDIO_DRIVER_NETBSD */
 /* #undef SDL_AUDIO_DRIVER_OSS */
-/* #undef SDL_AUDIO_DRIVER_PIPEWIRE */
-/* #undef SDL_AUDIO_DRIVER_PIPEWIRE_DYNAMIC */
+#define SDL_AUDIO_DRIVER_PIPEWIRE 1
+#define SDL_AUDIO_DRIVER_PIPEWIRE_DYNAMIC "libpipewire-0.3.so.0"
 #define SDL_AUDIO_DRIVER_PULSEAUDIO 1
 #define SDL_AUDIO_DRIVER_PULSEAUDIO_DYNAMIC "libpulse.so.0"
 /* #undef SDL_AUDIO_DRIVER_SNDIO */
@@ -330,7 +333,7 @@
 
 /* #undef SDL_HAPTIC_PRIVATE */
 
-/* #undef SDL_LIBUSB_DYNAMIC */
+#define SDL_LIBUSB_DYNAMIC "libusb-1.0.so.0"
 #define SDL_UDEV_DYNAMIC "libudev.so.1"
 
 /* Enable various process implementations */
@@ -420,7 +423,7 @@
 #define SDL_VIDEO_DRIVER_WAYLAND_DYNAMIC "libwayland-client.so.0"
 #define SDL_VIDEO_DRIVER_WAYLAND_DYNAMIC_CURSOR "libwayland-cursor.so.0"
 #define SDL_VIDEO_DRIVER_WAYLAND_DYNAMIC_EGL "libwayland-egl.so.1"
-/* #undef SDL_VIDEO_DRIVER_WAYLAND_DYNAMIC_LIBDECOR */
+#define SDL_VIDEO_DRIVER_WAYLAND_DYNAMIC_LIBDECOR "libdecor-0.so.0"
 #define SDL_VIDEO_DRIVER_WAYLAND_DYNAMIC_XKBCOMMON "libxkbcommon.so.0"
 /* #undef SDL_VIDEO_DRIVER_WINDOWS */
 #define SDL_VIDEO_DRIVER_X11 1
@@ -541,8 +544,8 @@
 /* #undef SDL_CAMERA_DRIVER_ANDROID */
 /* #undef SDL_CAMERA_DRIVER_EMSCRIPTEN */
 /* #undef SDL_CAMERA_DRIVER_MEDIAFOUNDATION */
-/* #undef SDL_CAMERA_DRIVER_PIPEWIRE */
-/* #undef SDL_CAMERA_DRIVER_PIPEWIRE_DYNAMIC */
+#define SDL_CAMERA_DRIVER_PIPEWIRE 1
+#define SDL_CAMERA_DRIVER_PIPEWIRE_DYNAMIC "libpipewire-0.3.so.0"
 /* #undef SDL_CAMERA_DRIVER_VITA */
 
 /* #undef SDL_CAMERA_DRIVER_PRIVATE */
@@ -576,13 +579,13 @@
 
 /* xkbcommon version info */
 #define SDL_XKBCOMMON_VERSION_MAJOR 1
-#define SDL_XKBCOMMON_VERSION_MINOR 13
-#define SDL_XKBCOMMON_VERSION_PATCH 1
+#define SDL_XKBCOMMON_VERSION_MINOR 4
+#define SDL_XKBCOMMON_VERSION_PATCH 0
 
 /* Libdecor version info */
-#define SDL_LIBDECOR_VERSION_MAJOR 
-#define SDL_LIBDECOR_VERSION_MINOR 
-#define SDL_LIBDECOR_VERSION_PATCH 
+#define SDL_LIBDECOR_VERSION_MAJOR 0
+#define SDL_LIBDECOR_VERSION_MINOR 1
+#define SDL_LIBDECOR_VERSION_PATCH 0
 
 #if !defined(HAVE_STDINT_H) && !defined(_STDINT_H_)
 /* Most everything except Visual Studio 2008 and earlier has stdint.h now */

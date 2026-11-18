@@ -193,8 +193,11 @@
 #define HAVE_GETPAGESIZE 1
 #define HAVE_ICONV 1
 /* #undef SDL_USE_LIBICONV */
+/* #undef HAVE_PTHREAD_CONDATTR_SETCLOCK */
 /* #undef HAVE_PTHREAD_SETNAME_NP */
 /* #undef HAVE_PTHREAD_SET_NAME_NP */
+/* #undef HAVE_SEM_CLOCKWAIT */
+/* #undef HAVE_SEM_CLOCKWAIT_NP */
 /* #undef HAVE_SEM_TIMEDWAIT */
 /* #undef HAVE_GETAUXVAL */
 /* #undef HAVE_ELF_AUX_INFO */
@@ -334,8 +337,8 @@
 /* #undef SDL_UDEV_DYNAMIC */
 
 /* Enable various process implementations */
-#define SDL_PROCESS_DUMMY 1
-/* #undef SDL_PROCESS_POSIX */
+/* #undef SDL_PROCESS_DUMMY */
+#define SDL_PROCESS_POSIX 1
 /* #undef SDL_PROCESS_WINDOWS */
 
 /* #undef SDL_PROCESS_PRIVATE */
