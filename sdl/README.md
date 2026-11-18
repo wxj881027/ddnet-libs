@@ -8,11 +8,14 @@
 - `windows/lib{64,32,arm64}/{SDL3.dll,SDL3.lib}`：Windows 动态库（x64 / x86 / arm64）
 - `linux/lib64/{libSDL3.so.0,libSDL3.so}`：Linux 动态库（`.so.0` 是运行时 SONAME，`.so` 供链接）
 - `android/lib{32,64,arm,arm64}/libSDL3.a`：Android 静态库
+- `mac/lib{64,arm64,fat}/SDL3.framework`：macOS 动态 framework
+- `ios/libSDL3.xcframework`：iOS 动态 framework（官方 xcframework 切片）
 - `java/org/libsdl/app`：Android 绑定
-- `VERSION`：当前预编译的 SDL3 版本
+- `proguard-rules.pro`：Android 混淆保留规则
+- `VERSION`：Windows/Linux/Android/macOS/iOS 切片的 SDL3 版本（webasm 仍为 3.4.18）
 
-当前已产出：Windows x64/x86/arm64、Linux x64（含 `cmake/PatchSDL3X11.cmake` 的修复）、Android 四个 ABI。
-待补：macOS、iOS、webasm 需要用对应工具链（Xcode / emsdk）在同一版本上生成。
+当前已产出：Windows x64/x86/arm64、Linux x64（含 `cmake/PatchSDL3X11.cmake` 的修复）、Android 四个 ABI、macOS、iOS。
+待补：webasm 需要用 emsdk 在同一版本上生成。
 
 ## 重新生成
 
